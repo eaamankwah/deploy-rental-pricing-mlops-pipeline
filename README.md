@@ -4,6 +4,8 @@ time on various rental platforms. You need to estimate the typical price for a g
 on the price of similar properties. Your company receives new data in bulk every week. The model needs 
 to be retrained with the same cadence, necessitating an end-to-end pipeline that can be reused.
 
+[W&B Project Link](https://wandb.ai/eaakwasi-woolf/nyc_airbnb)
+
 In this project you will build such a pipeline.
 
 ## Table of contents
@@ -30,6 +32,7 @@ In this project you will build such a pipeline.
   * [Release the pipeline](#release-the-pipeline)
   * [Train the model on a new data sample](#train-the-model-on-a-new-data-sample)
 - [Cleaning up](#cleaning-up)
+- [Future Improvement Discussion](#Future-Improvement)
 
 ## Preliminary steps
 
@@ -588,6 +591,16 @@ If you see the any error while running the command:
 
 Please, make sure all steps are using **the same** python version and that you have **conda installed**. Additionally, *mlflow* and *wandb* packages are crucial and should have the same version.
 
+##  Future Improvements
+
+- [ ] **Gradient Boosting** — Benchmark XGBoost / LightGBM against the RF baseline
+- [ ] **Geospatial Features** — Distance to subway, parks, tourist attractions via OpenStreetMap
+- [ ] **Automated Model Promotion** — Statistical test comparing new vs current prod model MAE
+- [ ] **Continuous Training (MLOps Level 2)** — Auto-trigger retraining when new S3 data arrives
+- [ ] **Temporal Validation** — Time-based train/test splits to reflect real production conditions
+- [ ] **Drift Monitoring** — Evidently AI or W&B monitoring for prediction and feature drift
+- [ ] **Containerisation** — Docker images per component for SageMaker / Vertex AI deployment
+- [ ] **CI/CD** — GitHub Actions to run `data_check` and unit tests on every pull request
 
 ## License
 
