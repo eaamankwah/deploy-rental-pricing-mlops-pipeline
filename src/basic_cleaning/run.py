@@ -40,10 +40,7 @@ def go(args):
 
     # FIX v1.0.1: Remove properties outside NYC geographic boundaries
     # Addresses out-of-bounds listings discovered in sample2.csv
-    logger.info("Removing properties outside NYC geographic boundaries")
-    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
-    df = df[idx].copy()
-    logger.info(f"Dataset shape after geographic filtering: {df.shape}")
+    
 
     # Save cleaned dataframe to CSV
     logger.info("Saving cleaned dataset")
